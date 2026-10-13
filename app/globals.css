@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --sc-navy: #071426;
+  --sc-navy-2: #10233d;
+  --sc-blue: #1769ff;
+  --sc-blue-hover: #0954de;
+  --sc-canvas: #f5f7fc;
+  --sc-surface: #ffffff;
+  --sc-success: #16a36a;
+  --sc-warning: #f59e0b;
+  --sc-missing: #e84b78;
+  --sc-stuck: #8055e8;
+  --sc-ink: #142238;
+  --sc-muted: #718096;
+  --background: var(--sc-navy);
+  --foreground: #ffffff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme inline {
+  --color-navy: var(--sc-navy);
+  --color-navy-2: var(--sc-navy-2);
+  --color-primary: var(--sc-blue);
+  --color-primary-hover: var(--sc-blue-hover);
+  --color-canvas: var(--sc-canvas);
+  --color-surface: var(--sc-surface);
+  --color-success: var(--sc-success);
+  --color-warning: var(--sc-warning);
+  --color-missing: var(--sc-missing);
+  --color-stuck: var(--sc-stuck);
+  --color-ink: var(--sc-ink);
+  --color-muted: var(--sc-muted);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #050b16;
+  color: var(--sc-ink);
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sc-blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
